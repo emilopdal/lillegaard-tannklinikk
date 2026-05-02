@@ -34,7 +34,7 @@ document.querySelectorAll('.feature-card, .service-item, .review-card').forEach(
 // Booking calendar
 (function () {
   const calEl = document.getElementById('bookingCalendar');
-  const hiddenInput = document.getElementById('selectedDate');
+  const hiddenInput = document.getElementById('selectedDate'); // inside form
   const displayEl = document.getElementById('dateDisplay');
   if (!calEl) return;
 
@@ -100,9 +100,17 @@ document.querySelectorAll('.feature-card, .service-item, .review-card').forEach(
 
   render();
 
-  // Form submission
-  const form = document.getElementById('bookingForm');
+  // Show success message if redirected back after submission
   const successEl = document.getElementById('bookingSuccess');
+  if (new URLSearchParams(window.location.search).get('booked') === '1') {
+    const form = document.getElementById('bookingForm');
+    if (form) form.style.display = 'none';
+    if (successEl) successEl.classList.add('visible');
+    document.getElementById('bestill-time').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Form submission with validation
+  const form = document.getElementById('bookingForm');
   if (!form) return;
 
   form.addEventListener('submit', function (e) {
@@ -120,44 +128,19 @@ document.querySelectorAll('.feature-card, .service-item, .review-card').forEach(
     const pnr = document.getElementById('postnummer');
     if (pnr && !/^\d{4}$/.test(pnr.value)) { pnr.classList.add('invalid'); valid = false; }
 
-    if (!hiddenInput.value) { displayEl.style.color = '#e05c5c'; displayEl.textContent = 'Vennligst velg en dato'; valid = false; }
+    if (!hiddenInput.value) {
+      displayEl.style.color = '#e05c5c';
+      displayEl.textContent = 'Vennligst velg en dato';
+      valid = false;
+    }
 
     if (!valid) return;
 
-    const submitBtn = form.querySelector('.booking__submit');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sender …';
+    // Sync behandling and set redirect URL before submitting
+    document.getElementById('behandlingHidden').value = document.getElementById('behandling').value;
+    document.getElementById('formNext').value = window.location.origin + window.location.pathname + '?booked=1#bestill-time';
 
-    const data = {
-      _subject: 'Ny timebestilling – Lillegaard Tannklinikk',
-      Dato: hiddenInput.value,
-      Behandling: document.getElementById('behandling').value,
-      Fornavn: document.getElementById('fornavn').value,
-      Etternavn: document.getElementById('etternavn').value,
-      'E-post': document.getElementById('epost').value,
-      Telefon: document.getElementById('telefon').value,
-      Fødselsnummer: document.getElementById('fodselsnummer').value,
-      Adresse: document.getElementById('adresse').value,
-      Postnummer: document.getElementById('postnummer').value,
-      Poststed: document.getElementById('poststed').value,
-      Kommentarer: document.getElementById('kommentarer').value
-    };
-
-    fetch('https://formsubmit.co/ajax/emil.opdal.2006@gmail.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    .then(function (res) { return res.json(); })
-    .then(function () {
-      form.style.display = 'none';
-      successEl.classList.add('visible');
-    })
-    .catch(function () {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send inn';
-      alert('Noe gikk galt. Prøv igjen eller ring oss på 75 52 22 33.');
-    });
+    form.submit();
   });
 
   form.querySelectorAll('input, textarea').forEach(function (field) {

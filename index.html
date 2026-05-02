@@ -220,7 +220,6 @@
           <div class="booking__block">
             <span class="booking__label">Velg dato</span>
             <div class="booking__calendar" id="bookingCalendar"></div>
-            <input type="hidden" id="selectedDate" name="dato" />
             <p class="booking__date-display" id="dateDisplay">Ingen dato valgt</p>
           </div>
           <div class="booking__block">
@@ -238,7 +237,12 @@
         </div>
 
         <div class="booking__right">
-          <form class="booking__form" id="bookingForm" novalidate>
+          <form class="booking__form" id="bookingForm" action="https://formsubmit.co/emil.opdal.2006@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Ny timebestilling – Lillegaard Tannklinikk" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" id="formNext" value="" />
+            <input type="hidden" name="Dato" id="selectedDate" />
+            <input type="hidden" name="Behandling" id="behandlingHidden" />
             <div class="booking__row">
               <div class="booking__field">
                 <label for="fornavn">Fornavn *</label>
