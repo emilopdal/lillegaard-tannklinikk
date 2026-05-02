@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lillegaard Tannklinikk – Bodø</title>
+  <meta name="description" content="Lillegaard Tannklinikk i Bodø. Dyktig og omsorgsfull tannlege – også for deg med tannlegeskrekk. Ring 75 52 22 33." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="logo-icon">&#9670;</span>
+        Lillegaard Tannklinikk
+      </a>
+      <nav class="nav__links">
+        <a href="#services">Tjenester</a>
+        <a href="#about">Om oss</a>
+        <a href="#reviews">Anmeldelser</a>
+        <a href="#contact" class="btn btn--nav">Kontakt</a>
+      </nav>
+      <button class="nav__hamburger" id="hamburger" aria-label="Meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#services" onclick="closeMobile()">Tjenester</a>
+      <a href="#about" onclick="closeMobile()">Om oss</a>
+      <a href="#reviews" onclick="closeMobile()">Anmeldelser</a>
+      <a href="#contact" onclick="closeMobile()">Kontakt</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__content">
+      <span class="hero__tag">Tannklinikk i Bodø siden 2000-tallet</span>
+      <h1>Vi tar vare på<br /><em>ditt smil</em></h1>
+      <p>Erfaren, omsorgsfull tannlege med spesiell forståelse for pasienter med tannlegeskrekk. Dempet belysning, rolig atmosfære – og et smil når du går.</p>
+      <div class="hero__ctas">
+        <a href="tel:75522233" class="btn btn--primary">Ring 75 52 22 33</a>
+        <a href="#services" class="btn btn--ghost">Se tjenester</a>
+      </div>
+      <div class="hero__badges">
+        <div class="badge">
+          <strong>4,7</strong>
+          <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <small>31 anmeldelser</small>
+        </div>
+        <div class="badge">
+          <strong>10+</strong>
+          <small>år med faste pasienter</small>
+        </div>
+        <div class="badge">
+          <strong>Akuttime</strong>
+          <small>også i helgene</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container features__grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">&#129502;</div>
+        <h3>Tannlegeskrekk?</h3>
+        <p>Vi forstår. Klinikken er designet for ro – dempet lys, rolig musikk og myke bevegelser. Mange pasienter opplever at skrekken forsvinner.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#128337;</div>
+        <h3>Akuttbehandling</h3>
+        <p>Har du akutte smerter? Vi strekker oss langt – også utenom ordinær åpningstid – for å hjelpe deg raskt og effektivt.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">&#127775;</div>
+        <h3>Erfaren tannlege</h3>
+        <p>Odd Petter Lillegaard er kjent for sin kunnskap, ro og empati. Pasientene kommer tilbake – år etter år.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tjenester</h2>
+        <p>Vi tilbyr et bredt spekter av tannbehandlinger for hele familien.</p>
+      </div>
+      <div class="services__grid">
+        <div class="service-item">
+          <div class="service-item__num">01</div>
+          <h4>Undersøkelse & rens</h4>
+          <p>Grundig undersøkelse, røntgen og profesjonell tannrens for å forebygge problemer.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-item__num">02</div>
+          <h4>Fyllinger & kariesbehandling</h4>
+          <p>Moderne, tannfargede fyllinger som gir et naturlig resultat.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-item__num">03</div>
+          <h4>Tannuttrekk & kirurgi</h4>
+          <p>Inkludert visdomstennoperasjoner – utført trygt og skånsomt.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-item__num">04</div>
+          <h4>Tannprotetikk</h4>
+          <p>Kroner, broer og proteser tilpasset deg for best mulig funksjon og utseende.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-item__num">05</div>
+          <h4>Tannbleking</h4>
+          <p>Profesjonell bleking for et lysere, friskere smil.</p>
+        </div>
+        <div class="service-item">
+          <div class="service-item__num">06</div>
+          <h4>Akuttbehandling</h4>
+          <p>Rask hjelp ved plutselige smerter eller infeksjoner – også utenom ordinær tid.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__image">
+        <div class="about__image-placeholder">
+          <span>&#9670;</span>
+          <p>Odd Petter<br/>Lillegaard</p>
+        </div>
+      </div>
+      <div class="about__text">
+        <span class="section-tag">Om tannlegen</span>
+        <h2>Odd Petter Lillegaard</h2>
+        <p class="about__lead">En tannlege som bryr seg – om deg som person, ikke bare om tennene dine.</p>
+        <p>Med mange år i bransjen har Odd Petter bygget seg et rykte som en av Bodøs mest omsorgsfulle og kunnskapsrike tannleger. Han tar seg tid til deg, lytter til dine bekymringer og skaper en atmosfære av trygghet.</p>
+        <p>Klinikken hans er spesielt kjent for å hjelpe pasienter som tidligere har gruet seg til tannlegebesøk. Mange forteller at tannlegeskrekken rett og slett forsvinner.</p>
+        <div class="about__stats">
+          <div>
+            <strong>4,7 / 5</strong>
+            <span>Google-vurdering</span>
+          </div>
+          <div>
+            <strong>31</strong>
+            <span>fornøyde anmeldelser</span>
+          </div>
+          <div>
+            <strong>10+</strong>
+            <span>år med lojale pasienter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header section-header--light">
+        <h2>Hva pasientene sier</h2>
+        <p>Ekte anmeldelser fra Google – 4,7 av 5 stjerner</p>
+      </div>
+      <div class="reviews__grid">
+        <div class="review-card">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>«Fikk en hastetime på en søndag etter visdomstannen ble operert borte og det ble en meget smertefull infeksjon. Rask og effektiv behandling, omsorgsfull og empatisk tannlege. Sendte mæ hjem smilende og smertefritt.»</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">C</div>
+            <div>
+              <strong>Cat-tree</strong>
+              <small>Google Anmeldelse · Local Guide</small>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>«Det er nesten litt magisk… tannlegeskrekken blir borte vekk, uten at jeg helt klarer å sette fingeren på hva denne tannlegen gjør annerledes enn andre. Fine lokaler, dempet belysning, rolig musikk og rolige bevegelser.»</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">B</div>
+            <div>
+              <strong>Bente Heggedal</strong>
+              <small>Google Anmeldelse</small>
+            </div>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>«Har hatt tannlegekontoret som mitt faste tannlegekontor i over 10 år nå. Kom dit med enorm tannlegeskrekk. Men Odd Petter Lillegaard er en utrolig dyktig, kunnskapsrik og flink tannlege – anbefales på det varmeste.»</p>
+          <div class="review-card__author">
+            <div class="review-card__avatar">S</div>
+            <div>
+              <strong>Stine Beate Brodersen</strong>
+              <small>Google Anmeldelse</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews__cta">
+        <a href="https://g.page/r/lillegaard-tannklinikk/review" target="_blank" rel="noopener" class="btn btn--outline-light">Se alle 31 anmeldelser</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <span class="section-tag">Kontakt oss</span>
+        <h2>Book time i dag</h2>
+        <p>Vi ser frem til å ta imot deg. Ring oss direkte eller send en e-post, så finner vi en tid som passer.</p>
+        <ul class="contact__list">
+          <li>
+            <span class="contact__icon">&#128222;</span>
+            <div>
+              <strong>Telefon</strong>
+              <a href="tel:75522233">75 52 22 33</a>
+            </div>
+          </li>
+          <li>
+            <span class="contact__icon">&#128205;</span>
+            <div>
+              <strong>Adresse</strong>
+              <span>Dronningens gate 28<br />8006 Bodø</span>
+            </div>
+          </li>
+          <li>
+            <span class="contact__icon">&#128336;</span>
+            <div>
+              <strong>Åpningstider</strong>
+              <span>Man–Fre: 07:45 – 16:00<br />Lør–Søn: Stengt (akutt etter avtale)</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="contact__map">
+        <iframe
+          title="Kart – Lillegaard Tannklinikk"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1691.3!2d14.3717!3d67.2806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x45df5f3b8f0ef6b5%3A0x1!2sDronningens%20gate%2028%2C%208006%20Bod%C3%B8!5e0!3m2!1sno!2sno!4v1"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo-icon">&#9670;</span>
+        Lillegaard Tannklinikk
+      </div>
+      <p class="footer__address">Dronningens gate 28, 8006 Bodø &nbsp;·&nbsp; 75 52 22 33</p>
+      <p class="footer__copy">&copy; 2026 Lillegaard Tannklinikk. Alle rettigheter forbeholdt.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
