@@ -124,8 +124,40 @@ document.querySelectorAll('.feature-card, .service-item, .review-card').forEach(
 
     if (!valid) return;
 
-    form.style.display = 'none';
-    successEl.classList.add('visible');
+    const submitBtn = form.querySelector('.booking__submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sender …';
+
+    const data = {
+      _subject: 'Ny timebestilling – Lillegaard Tannklinikk',
+      Dato: hiddenInput.value,
+      Behandling: document.getElementById('behandling').value,
+      Fornavn: document.getElementById('fornavn').value,
+      Etternavn: document.getElementById('etternavn').value,
+      'E-post': document.getElementById('epost').value,
+      Telefon: document.getElementById('telefon').value,
+      Fødselsnummer: document.getElementById('fodselsnummer').value,
+      Adresse: document.getElementById('adresse').value,
+      Postnummer: document.getElementById('postnummer').value,
+      Poststed: document.getElementById('poststed').value,
+      Kommentarer: document.getElementById('kommentarer').value
+    };
+
+    fetch('https://formsubmit.co/ajax/emil.opdal.2006@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function (res) { return res.json(); })
+    .then(function () {
+      form.style.display = 'none';
+      successEl.classList.add('visible');
+    })
+    .catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send inn';
+      alert('Noe gikk galt. Prøv igjen eller ring oss på 75 52 22 33.');
+    });
   });
 
   form.querySelectorAll('input, textarea').forEach(function (field) {
