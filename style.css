@@ -128,6 +128,7 @@ a { text-decoration: none; color: inherit; }
   object-fit: contain;
   border-radius: 50%;
   flex-shrink: 0;
+  mix-blend-mode: multiply;
 }
 
 .nav__links {
@@ -292,8 +293,10 @@ a { text-decoration: none; color: inherit; }
 
 .features__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .feature-card {
@@ -733,7 +736,7 @@ a { text-decoration: none; color: inherit; }
    RESPONSIVE
 =========================== */
 @media (max-width: 900px) {
-  .features__grid { grid-template-columns: 1fr; gap: 16px; }
+  .features__grid { grid-template-columns: 1fr; gap: 16px; max-width: 100%; }
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .about__inner { grid-template-columns: 1fr; gap: 40px; }
   .about__image { max-width: 320px; margin: 0 auto; }
