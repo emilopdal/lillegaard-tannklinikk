@@ -546,6 +546,61 @@ a { text-decoration: none; color: inherit; }
 .reviews__cta { text-align: center; }
 
 /* ===========================
+   PRACTICAL INFO
+=========================== */
+.practical {
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 48px 0;
+}
+
+.practical__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.practical__group h4 {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.practical__group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.practical__group li {
+  font-size: .9rem;
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.practical__group li::before {
+  content: '✓';
+  color: var(--mint);
+  font-weight: 700;
+  font-size: .85rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .practical__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .practical__grid { grid-template-columns: 1fr; }
+}
+
+/* ===========================
    CONTACT
 =========================== */
 .contact {
