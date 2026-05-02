@@ -23,7 +23,8 @@
         <a href="#about">Om oss</a>
         <a href="#reviews">Anmeldelser</a>
         <a href="#apningstider">Åpningstider</a>
-        <a href="#contact" class="btn btn--nav">Kontakt</a>
+        <a href="#bestill-time" class="btn btn--nav">Bestill time</a>
+        <a href="#contact" class="btn btn--nav btn--nav-outline">Kontakt</a>
       </nav>
       <button class="nav__hamburger" id="hamburger" aria-label="Meny">
         <span></span><span></span><span></span>
@@ -34,6 +35,7 @@
       <a href="#about" onclick="closeMobile()">Om oss</a>
       <a href="#reviews" onclick="closeMobile()">Anmeldelser</a>
       <a href="#apningstider" onclick="closeMobile()">Åpningstider</a>
+      <a href="#bestill-time" onclick="closeMobile()">Bestill time</a>
       <a href="#contact" onclick="closeMobile()">Kontakt</a>
     </div>
   </header>
@@ -201,6 +203,93 @@
       </div>
       <div class="reviews__cta">
         <a href="https://www.google.com/maps/place/Lillegaard+Tannklinikk,+Dronningens+gate+28,+8006+Bod%C3%B8" target="_blank" rel="noopener" class="btn btn--outline-light">Se alle 31 anmeldelser</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESTILL TIME -->
+  <section class="booking" id="bestill-time">
+    <div class="container">
+      <div class="section-header">
+        <h2>Bestill time</h2>
+        <p>Fyll ut skjemaet nedenfor, så tar vi kontakt for å bekrefte timen.</p>
+      </div>
+      <div class="booking__inner">
+
+        <div class="booking__left">
+          <div class="booking__block">
+            <span class="booking__label">Velg dato</span>
+            <div class="booking__calendar" id="bookingCalendar"></div>
+            <input type="hidden" id="selectedDate" name="dato" />
+            <p class="booking__date-display" id="dateDisplay">Ingen dato valgt</p>
+          </div>
+          <div class="booking__block">
+            <label class="booking__label" for="behandling">Velg behandling</label>
+            <select id="behandling" name="behandling" class="booking__select" required>
+              <option value="">— Velg behandling —</option>
+              <option value="Undersøkelse og rens">Undersøkelse &amp; rens</option>
+              <option value="Fyllinger og kariesbehandling">Fyllinger &amp; kariesbehandling</option>
+              <option value="Tannuttrekk og kirurgi">Tannuttrekk &amp; kirurgi</option>
+              <option value="Tannprotetikk">Tannprotetikk</option>
+              <option value="Tannbleking">Tannbleking</option>
+              <option value="Akuttbehandling">Akuttbehandling</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="booking__right">
+          <form class="booking__form" id="bookingForm" novalidate>
+            <div class="booking__row">
+              <div class="booking__field">
+                <label for="fornavn">Fornavn *</label>
+                <input type="text" id="fornavn" name="fornavn" autocomplete="given-name" required />
+              </div>
+              <div class="booking__field">
+                <label for="etternavn">Etternavn *</label>
+                <input type="text" id="etternavn" name="etternavn" autocomplete="family-name" required />
+              </div>
+            </div>
+            <div class="booking__row">
+              <div class="booking__field">
+                <label for="epost">E-post *</label>
+                <input type="email" id="epost" name="epost" autocomplete="email" required />
+              </div>
+              <div class="booking__field">
+                <label for="telefon">Telefon *</label>
+                <input type="tel" id="telefon" name="telefon" autocomplete="tel" required />
+              </div>
+            </div>
+            <div class="booking__field">
+              <label for="fodselsnummer">Fødselsnummer *</label>
+              <input type="text" id="fodselsnummer" name="fodselsnummer" inputmode="numeric" maxlength="11" pattern="\d{11}" required />
+            </div>
+            <div class="booking__field">
+              <label for="adresse">Adresse *</label>
+              <input type="text" id="adresse" name="adresse" autocomplete="street-address" required />
+            </div>
+            <div class="booking__row">
+              <div class="booking__field">
+                <label for="postnummer">Postnummer *</label>
+                <input type="text" id="postnummer" name="postnummer" inputmode="numeric" maxlength="4" pattern="\d{4}" autocomplete="postal-code" required />
+              </div>
+              <div class="booking__field">
+                <label for="poststed">Poststed *</label>
+                <input type="text" id="poststed" name="poststed" autocomplete="address-level2" required />
+              </div>
+            </div>
+            <div class="booking__field">
+              <label for="kommentarer">Andre kommentarer</label>
+              <textarea id="kommentarer" name="kommentarer" rows="4" placeholder="Beskriv eventuelt hva du ønsker hjelp med …"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary booking__submit">Send inn</button>
+          </form>
+          <div class="booking__success" id="bookingSuccess">
+            <div class="booking__success-icon">&#10003;</div>
+            <h3>Takk for din forespørsel!</h3>
+            <p>Vi tar kontakt snart for å bekrefte timen din.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
